@@ -1,39 +1,39 @@
+import javax.swing.*;
 import java.awt.*;
 import java.awt.event.*;
-import javax.swing.*;
 
-public class KeyEventDemo extends JFrame implements KeyListener {
+public class KeyEventFullText extends JFrame {
     JLabel promptLabel, displayLabel;
     JTextField textField;
 
-    public KeyEventDemo() {
+    public KeyEventFullText() {
         setTitle("Event Handling Demo");
         setLayout(new FlowLayout());
-        setSize(400, 100);
+        setSize(450, 100);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
+        // Components
         promptLabel = new JLabel("Enter any character");
         textField = new JTextField(10);
         displayLabel = new JLabel("Pressed key is ");
 
+        // Add components
         add(promptLabel);
         add(textField);
         add(displayLabel);
 
-        textField.addKeyListener(this);
+        // Add key listener
+        textField.addKeyListener(new KeyAdapter() {
+            public void keyReleased(KeyEvent e) {
+                String input = textField.getText();
+                displayLabel.setText("Pressed key is " + input);
+            }
+        });
 
         setVisible(true);
     }
 
-    // KeyListener methods
-    public void keyTyped(KeyEvent e) {
-        displayLabel.setText("Pressed key is " + e.getKeyChar());
-    }
-
-    public void keyPressed(KeyEvent e) {}
-    public void keyReleased(KeyEvent e) {}
-
     public static void main(String[] args) {
-        new KeyEventDemo();
+        new KeyEventFullText();
     }
 }
