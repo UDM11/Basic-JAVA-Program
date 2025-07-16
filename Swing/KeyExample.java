@@ -1,6 +1,6 @@
-import java.awt.LayoutManager;
-import javax.swing.*;
+import java.awt.FlowLayout;
 import java.awt.event.*;
+import javax.swing.*;
 
 public class KeyExample extends JFrame implements KeyListener {
     JLabel label;
@@ -30,11 +30,5 @@ public class KeyExample extends JFrame implements KeyListener {
 
     public static void main(String[] args) {
         new KeyExample();
-    }
-
-    private static class FlowLayout implements LayoutManager {
-
-        public FlowLayout() {
-        }
     }
 }
