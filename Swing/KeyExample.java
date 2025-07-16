@@ -1,3 +1,4 @@
+import java.awt.LayoutManager;
 import javax.swing.*;
 import java.awt.event.*;
 
@@ -29,5 +30,11 @@ public class KeyExample extends JFrame implements KeyListener {
 
     public static void main(String[] args) {
         new KeyExample();
+    }
+
+    private static class FlowLayout implements LayoutManager {
+
+        public FlowLayout() {
+        }
     }
 }
