@@ -11,7 +11,7 @@ public class MouseExample extends JFrame implements MouseListener {
         setDefaultCloseOperation(EXIT_ON_CLOSE);
 
         label = new JLabel("Click anywhere!");
-        label.setBounds(100, 50, 150, 30);
+        label.setBounds(50, 50, 150, 30);
         add(label);
 
         addMouseListener(this);

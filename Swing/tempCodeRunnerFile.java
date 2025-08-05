@@ -1,0 +1,1 @@
+        feedbackArea.setLineWrap(true);
